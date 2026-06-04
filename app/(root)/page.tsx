@@ -1,10 +1,15 @@
 import Header from "@/components/Header";
-
+import VideoCard from "@/components/VideoCard";
+import { dummyCards } from "@/constants";
 export default function Home() {
   return (
-      <main className="wrapper page">
-        <Header subheader="Home" title={"Loom Clone"} userImg="" />
-        <h1 className="text-2xl font-karla">Welcome to Loom Clone</h1>
-      </main>
+    <main className="wrapper page">
+      <Header title="All Videos" subHeader={"Public Library"} userImg="" />
+      <section className="video-grid">
+        {dummyCards.map((card) => (
+          <VideoCard {...card} key={card.id} />
+        ))}
+      </section>
+    </main>
   );
 }

@@ -1,10 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-
-const user={};
+const user = {};
 const Navbar = () => {
-
+  const router = useRouter();
   return (
     <header className="navbar">
       <nav>
@@ -19,7 +20,7 @@ const Navbar = () => {
         </Link>
         {user && (
           <figure>
-            <button>
+            <button onClick={() => router.push("/profile/12345")}>
               <Image
                 src="/assets/images/dummy.jpg"
                 alt="avatar"
@@ -42,6 +43,6 @@ const Navbar = () => {
       </nav>
     </header>
   );
-}
+};
 
 export default Navbar;
