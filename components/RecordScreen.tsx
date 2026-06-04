@@ -24,18 +24,15 @@ const RecordScreen = () => {
   }
   
   const handleStart=async ()=>{
-      
     await startRecording();
   }
   
   const recordAgain= async ()=>{
-    
     resetRecording();
     await startRecording();
   }
   
   const gotoUpload=()=>{
-    
     if (recordedBlob) {
       router.push("/upload");
     }
@@ -54,9 +51,7 @@ const RecordScreen = () => {
       </button>
       {isOpen && (
         <section className="dialog">
-            <div className="overlay-record" onClick={()=>closeModal()}>
-                
-          <div className="overlay-record" onClick={() => closeModal()}></div>
+          <div className="overlay-record" onClick={()=>closeModal()}>
           <div className="modal-content bg-white p-8 rounded-2xl shadow-xl z-50 w-full max-w-2xl">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-gray-800">Record Screen</h2>
@@ -64,8 +59,7 @@ const RecordScreen = () => {
                 <Image src="/assets/icons/logout.svg" alt="close" width={24} height={24} className="rotate-180" />
               </button>
             </div>
-        </section >
-        
+         </div>
 
             <div className="aspect-video bg-gray-900 rounded-xl overflow-hidden mb-6 flex items-center justify-center border-4 border-gray-100">
               {recordedVideoUrl ? (
